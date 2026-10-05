@@ -1,0 +1,20 @@
+<!doctype html>
+<html lang="pt"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Admin — RedotPay Guide</title>
+<style>
+body{margin:0;background:#080a0f;color:#fff;font-family:system-ui}.wrap{max-width:900px;margin:auto;padding:30px 18px}
+.card{background:#11151c;border:1px solid #29313d;border-radius:20px;padding:22px;margin:15px 0}label{display:block;margin:13px 0 6px;font-weight:800}input,textarea{width:100%;padding:12px;border-radius:10px;border:1px solid #303846;background:#090c11;color:#fff;box-sizing:border-box}button{margin-top:15px;padding:13px 17px;border:0;border-radius:12px;background:#ff2d78;color:#fff;font-weight:900;cursor:pointer}.hint{color:#9ea8b7;line-height:1.6}
+</style></head><body><div class="wrap">
+<h1>RedotPay Guide — Admin</h1>
+<p class="hint">Painel preparado para a próxima fase. A versão de produção deve proteger esta área com autenticação. Aqui serão geridos o número WhatsApp, link de convite, códigos promocionais, textos e imagens dos passos.</p>
+<div class="card"><h2>Conteúdo</h2>
+<label>Número WhatsApp (formato internacional)</label><input placeholder="25884xxxxxxx">
+<label>Link de convite</label><input value="https://url.hk/i/en/jt6mg">
+<label>Código de convite</label><input value="jt6mg">
+<label>Código cartão virtual</label><input value="PAYGOV20">
+<label>Código cartão físico</label><input value="PAYGOP20">
+<button onclick="alert('Ligação ao Supabase será adicionada na implementação do painel.')">Guardar</button>
+</div>
+<div class="card"><h2>Imagens dos passos</h2><p class="hint">Upload futuro para: Passo 1, Registo, Referral Code, KYC, Conta verificada, Cartão, Checkout e instruções de WhatsApp.</p>
+<input type="file" accept="image/*" multiple>
+</div></div></body></html>
