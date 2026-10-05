@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="pt">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>RedotPay Moçambique — Guia + Cartão</title>
+<style>
+:root{--bg:#07090d;--card:#10141b;--card2:#151a22;--text:#f7f8fb;--muted:#aeb6c4;--pink:#ff2d78;--pink2:#ff5b9a;--line:#252c38;--green:#25d366;--gold:#ffd166}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:linear-gradient(180deg,#07090d,#0b0e14 45%,#07090d);color:var(--text);font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif}
+a{text-decoration:none;color:inherit}.wrap{max-width:1080px;margin:auto;padding:0 18px}
+nav{position:sticky;top:0;z-index:20;background:rgba(7,9,13,.84);backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
+.navin{height:68px;display:flex;align-items:center;justify-content:space-between}.brand{display:flex;align-items:center;gap:10px;font-weight:800}.logo{width:38px;height:38px;border-radius:12px;background:linear-gradient(135deg,#ff176b,#ff5f99);display:grid;place-items:center;font-weight:900}.navlinks{display:flex;gap:18px;color:var(--muted);font-size:14px}.navcta{background:var(--pink);padding:11px 15px;border-radius:12px;font-weight:800}
+.hero{padding:70px 0 42px}.hero-grid{display:grid;grid-template-columns:1.12fr .88fr;gap:30px;align-items:center}.eyebrow{display:inline-flex;padding:7px 11px;border:1px solid #3a2430;background:#191018;color:#ff83ad;border-radius:999px;font-size:12px;font-weight:800}.hero h1{font-size:clamp(38px,6vw,68px);line-height:1.02;margin:18px 0 16px;letter-spacing:-2px}.hero h1 span{color:#ff4d91}.hero p{color:var(--muted);font-size:18px;line-height:1.65;max-width:690px}.actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:24px}.btn{border:0;cursor:pointer;padding:14px 18px;border-radius:14px;font-weight:850;font-size:15px;display:inline-flex;align-items:center;justify-content:center;gap:8px}.primary{background:var(--pink);color:white}.secondary{background:#171c24;border:1px solid var(--line);color:white}
+.card-preview{background:radial-gradient(circle at 25% 15%,#ff5d98 0,#a91651 28%,#1a0b13 65%,#0e1117 100%);border:1px solid #5e233b;border-radius:26px;padding:26px;min-height:350px;box-shadow:0 25px 80px #0008;position:relative;overflow:hidden}.card-preview:before{content:"";position:absolute;width:250px;height:250px;border-radius:50%;right:-90px;top:-80px;background:#ff4f9250;filter:blur(8px)}.chip{width:48px;height:36px;border-radius:8px;background:linear-gradient(135deg,#f7d58a,#fff0b2);margin-top:30px}.cardname{margin-top:115px;font-size:25px;font-weight:900}.cardmini{color:#ffd4e3;margin-top:7px}.offer{margin-top:22px;background:#fff;color:#111;border-radius:16px;padding:13px;font-weight:900}.offer small{display:block;font-weight:600;color:#555;margin-top:3px}
+.section{padding:52px 0}.section h2{font-size:34px;margin:0 0 10px;letter-spacing:-1px}.lead{color:var(--muted);line-height:1.65;margin-bottom:28px}.steps{display:grid;gap:18px}.step{display:grid;grid-template-columns:58px 1fr;gap:18px;background:var(--card);border:1px solid var(--line);border-radius:22px;padding:22px}.num{width:50px;height:50px;border-radius:16px;background:#25121b;color:#ff6c9f;display:grid;place-items:center;font-weight:950;font-size:19px}.step h3{margin:1px 0 7px;font-size:21px}.step p,.step li{color:var(--muted);line-height:1.6}.step ul{padding-left:20px}.copyrow{display:flex;gap:9px;flex-wrap:wrap;margin-top:13px}.code{background:#090b10;border:1px dashed #4a5362;border-radius:12px;padding:11px 13px;font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-weight:800}.copy{background:#202631;border:0;color:#fff;border-radius:11px;padding:10px 13px;cursor:pointer;font-weight:800}
+.slot{margin-top:18px;border:2px dashed #343d4c;background:#0c1016;border-radius:18px;min-height:150px;display:grid;place-items:center;text-align:center;padding:18px;color:#778294;position:relative}.slot strong{color:#c8cfda;display:block;margin-bottom:4px}.slot input{margin-top:10px;max-width:100%}.preview{max-width:100%;max-height:260px;border-radius:12px;display:none}
+.offerbox{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;margin-top:18px}.promo{background:linear-gradient(145deg,#171b24,#10131a);border:1px solid var(--line);padding:18px;border-radius:18px}.promo strong{font-size:23px;color:#ff72a4}.promo span{display:block;color:var(--muted);margin-top:5px}
+.recharge{background:linear-gradient(145deg,#151018,#10141b);border:1px solid #442236;border-radius:26px;padding:26px}.price{font-size:42px;font-weight:950;color:#ff5b9a}.methods{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin:20px 0}.method{padding:13px;border-radius:13px;background:#0b0e13;border:1px solid var(--line);text-align:center;font-weight:800}.method small{display:block;color:var(--muted);font-weight:500;margin-top:3px}.paybtn{width:100%;background:var(--pink);color:#fff;border:0;border-radius:15px;padding:16px;font-size:16px;font-weight:900;cursor:pointer}.paybtn:disabled{opacity:.45;cursor:not-allowed}
+.faq{display:grid;gap:10px}.faq details{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:17px}.faq summary{font-weight:850;cursor:pointer}.faq p{color:var(--muted);line-height:1.6}
+.notice{padding:14px 16px;border-radius:14px;background:#16130d;border:1px solid #4b3d20;color:#d7c89d;line-height:1.55}.footer{border-top:1px solid var(--line);padding:35px 0;color:#7f8998;font-size:13px;line-height:1.7}
+@media(max-width:800px){.hero-grid{grid-template-columns:1fr}.navlinks{display:none}.offerbox{grid-template-columns:1fr}.methods{grid-template-columns:repeat(2,1fr)}.hero{padding-top:45px}.card-preview{min-height:300px}}
+
+.notif-wrap{position:relative}.notif-btn{width:42px;height:42px;border-radius:13px;background:#171c24;border:1px solid var(--line);color:#fff;cursor:pointer;font-size:18px;position:relative}.notif-count{position:absolute;right:-4px;top:-5px;min-width:19px;height:19px;padding:0 5px;border-radius:999px;background:var(--pink);font-size:10px;display:grid;place-items:center;font-weight:950}.notif-panel{display:none;position:absolute;right:0;top:52px;width:min(360px,calc(100vw - 28px));background:#10141b;border:1px solid var(--line);border-radius:18px;box-shadow:0 22px 70px #000b;overflow:hidden}.notif-panel.open{display:block}.notif-head{padding:15px 16px;border-bottom:1px solid var(--line);display:flex;justify-content:space-between;font-weight:900}.notif-item{padding:14px 16px;border-bottom:1px solid #202631;display:flex;gap:10px}.notif-item:last-child{border-bottom:0}.notif-dot{width:9px;height:9px;border-radius:50%;background:var(--pink);margin-top:7px;flex:0 0 auto}.notif-item p{margin:0;color:#c3cad5;font-size:13px;line-height:1.45}.notif-item small{display:block;color:#747f90;margin-top:4px}.timeline{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-top:20px}.tstep{background:#0b0f15;border:1px solid var(--line);border-radius:13px;padding:12px;text-align:center;font-size:12px;color:#8993a2}.tstep.active{border-color:#7b3152;color:#ff83ad;background:#1b1118}.toast{position:fixed;right:18px;bottom:18px;z-index:100;display:none;max-width:360px;background:#161b23;border:1px solid #394352;border-radius:15px;padding:14px 16px;box-shadow:0 18px 50px #000a;color:#fff}.toast.show{display:block}.support{margin-top:18px;display:flex;gap:10px;flex-wrap:wrap}.wa{background:#173522;border:1px solid #285b3a;color:#8ff0af}
+@media(max-width:800px){.timeline{grid-template-columns:repeat(2,1fr)}}
+</style>
+</head>
+<body>
+<nav><div class="wrap navin"><a class="brand" href="#"><span class="logo">R</span> RedotPay Guide</a><div class="navlinks"><a href="#passos">Passo a passo</a><a href="#promos">Promoções</a><a href="#recarregar">Recarregar</a></div><div style="display:flex;gap:9px;align-items:center"><div class="notif-wrap"><button class="notif-btn" onclick="toggleNotifications()" aria-label="Notificações">🔔<span class="notif-count" id="notifCount">3</span></button><div class="notif-panel" id="notifPanel"><div class="notif-head"><span>Notificações</span><button class="copy" onclick="markNotificationsRead()">Marcar lidas</button></div><div class="notif-item"><span class="notif-dot"></span><div><b>Bem-vindo!</b><p>Use o link de convite e o código <b>jt6mg</b> durante o registo.</p><small>Agora</small></div></div><div class="notif-item"><span class="notif-dot"></span><div><b>Bónus de $5</b><p>Novos utilizadores elegíveis podem receber o bónus segundo as condições da campanha.</p><small>Informação</small></div></div><div class="notif-item"><span class="notif-dot"></span><div><b>20% OFF</b><p>Use PAYGOV20 para virtual ou PAYGOP20 para físico.</p><small>Promoção</small></div></div></div></div><a class="navcta" href="#recarregar">850 MT</a></div></div></nav>
+
+<header class="hero"><div class="wrap hero-grid">
+<div><span class="eyebrow">GUIA PARA MOÇAMBIQUE</span><h1>Crie a sua conta e peça o seu <span>cartão RedotPay</span>.</h1>
+<p>Siga o processo passo a passo. Use o meu link de convite, coloque o código correto durante o registo, faça a verificação da identidade e, depois de aprovado, poderá solicitar ajuda para recarregar a conta através dos métodos de pagamento disponíveis.</p>
+<div style="margin-top:22px;padding:18px 20px;border-radius:20px;background:linear-gradient(135deg,#2a111c,#171018);border:1px solid #6b2946;box-shadow:0 12px 40px #0005">
+<div style="font-size:13px;font-weight:900;color:#ff8ab4;letter-spacing:.5px">🎁 OFERTA PARA NOVOS UTILIZADORES</div>
+<div style="font-size:30px;font-weight:950;margin-top:5px">$5 BÓNUS + 20% DE DESCONTO</div>
+<div style="color:#c4ccd8;line-height:1.55;margin-top:5px">Registe-se através do nosso link de convite e, quando elegível segundo as regras da campanha, poderá receber o bónus de <b>$5</b>. Depois use o código promocional para obter <b>20% OFF</b> no cartão.</div>
+</div>
+<div class="actions"><a class="btn primary" href="https://url.hk/i/en/jt6mg" target="_blank">🚀 Criar conta agora</a><a class="btn secondary" href="#passos">Ver o passo a passo ↓</a></div></div>
+<div class="card-preview"><div style="font-weight:900">REDOTPAY</div><div class="chip"></div><div class="cardname">PAYGO • USER</div><div class="cardmini">Virtual / Physical Card</div><div class="offer">20% OFF <small>Use o código correspondente no checkout do cartão.</small></div></div>
+</div></header><section class="wrap" style="padding-top:10px"><div class="timeline"><div class="tstep active">01<br><b>Registo</b></div><div class="tstep">02<br><b>Verificação</b></div><div class="tstep">03<br><b>Cartão + desconto</b></div><div class="tstep">04<br><b>Recarga 850 MT</b></div></div></section>
+
+<main class="wrap">
+<section class="section" id="passos"><h2>Como criar a conta</h2><p class="lead">Não pule os passos. O código de convite precisa ser usado durante o registo; o código promocional do cartão é usado posteriormente no checkout.</p>
+<div class="steps">
+<article class="step"><div class="num">01</div><div><h3>Abra o link de convite</h3><p>Clique no botão abaixo para iniciar o registo através do meu convite.</p><div class="copyrow"><a class="btn primary" href="https://url.hk/i/en/jt6mg" target="_blank">Abrir convite</a><span class="code">https://url.hk/i/en/jt6mg</span><button class="copy" onclick="copyText('https://url.hk/i/en/jt6mg')">Copiar</button></div><div class="slot"><div><strong>📸 Espaço para captura — Passo 1</strong>Adicione aqui a imagem mostrando onde clicar no link.<br><input type="file" accept="image/*" onchange="preview(this)"><img class="preview"></div></div></div></article>
+
+<article class="step"><div class="num">02</div><div><h3>Crie a conta</h3><p>Introduza o seu e-mail, confirme o código recebido e crie a sua palavra-passe. Use dados verdadeiros e mantenha o acesso à conta seguro.</p><div class="slot"><div><strong>📸 Espaço para captura — Passo 2</strong>Mostre aqui o ecrã de criação da conta.<br><input type="file" accept="image/*" onchange="preview(this)"><img class="preview"></div></div></div></article>
+
+<article class="step"><div class="num">03</div><div><h3>Introduza o código de convite</h3><p>No campo <b>Referral Code</b> durante o registo, coloque:</p><div class="copyrow"><span class="code">jt6mg</span><button class="copy" onclick="copyText('jt6mg')">Copiar código</button></div><p><b>Importante:</b> segundo a documentação oficial, o código de indicação deve ser aplicado durante o registo e não pode ser adicionado depois numa conta já criada.</p><div class="slot"><div><strong>📸 Espaço para captura — Passo 3</strong>Adicione a captura com o campo Referral Code destacado.<br><input type="file" accept="image/*" onchange="preview(this)"><img class="preview"></div></div></div></article>
+
+<article class="step"><div class="num">04</div><div><h3>Faça a verificação da identidade (KYC)</h3><p>Abra a área de verificação e siga as instruções apresentadas pela RedotPay. Use um documento válido, fotos nítidas e os seus próprios dados.</p><div class="notice">🔐 A verificação é feita pela RedotPay. Nunca envie o seu documento, senha, código OTP ou chave privada para nós.</div><div class="slot"><div><strong>📸 Espaço para captura — Passo 4</strong>Adicione exemplos das telas de verificação, sem expor dados pessoais.<br><input type="file" accept="image/*" onchange="preview(this)"><img class="preview"></div></div></div></article>
+
+<article class="step"><div class="num">05</div><div><h3>Confirme se a conta foi aprovada</h3><p>Depois da aprovação, volte à página e avance para a etapa de cartão/recarregamento. A disponibilidade de produtos e taxas deve ser confirmada na própria app.</p><div class="slot"><div><strong>📸 Espaço para captura — Passo 5</strong>Coloque aqui a captura de “Verified/Verified Account”.<br><input type="file" accept="image/*" onchange="preview(this)"><img class="preview"></div></div></div></article>
+</div></section>
+
+<section class="section" id="promos"><h2>🎁 $5 Bónus + 20% OFF</h2>
+<p class="lead">Há duas vantagens diferentes nesta campanha: <b>$5 de bónus para novos utilizadores elegíveis</b> que se registarem através do nosso link de convite e <b>20% de desconto</b> na aplicação do código promocional do cartão.</p>
+<div style="background:linear-gradient(135deg,#21121a,#11151c);border:1px solid #63304a;border-radius:22px;padding:22px;margin-bottom:18px">
+<div style="font-size:38px;font-weight:950;color:#ff6a9f">$5 BÓNUS</div>
+<p style="color:#c3cbd7;line-height:1.6;margin:7px 0 0">Use o nosso link <b>https://url.hk/i/en/jt6mg</b> e o código de convite <b>jt6mg</b> durante o registo. O recebimento do bónus depende da elegibilidade e das regras da campanha da RedotPay.</p>
+</div>
+<div class="offerbox">
+<div class="offerbox"><div class="promo"><strong>PAYGOV20</strong><span>20% OFF — cartão virtual</span><button class="copy" style="margin-top:12px" onclick="copyText('PAYGOV20')">Copiar</button></div><div class="promo"><strong>PAYGOP20</strong><span>20% OFF — cartão físico</span><button class="copy" style="margin-top:12px" onclick="copyText('PAYGOP20')">Copiar</button></div></div>
+<div class="slot"><div><strong>📸 Espaço para captura — Checkout</strong>Adicione a imagem mostrando onde colocar o código promocional.<br><input type="file" accept="image/*" onchange="preview(this)"><img class="preview"></div></div>
+</section>
+
+<section class="section"><h2>Antes de pagar os 850 MT</h2><div class="steps">
+<article class="step"><div class="num">✓</div><div><h3>Checklist</h3><ul><li>Conta criada através do link de convite.</li><li>Código <b>jt6mg</b> aplicado durante o registo.</li><li>Conta verificada/aprovada.</li><li>Escolha do cartão pretendido.</li><li>Código de desconto aplicado quando disponível.</li><li>Só depois avance para o pagamento de 850 MT.</li></ul></div></article></div></section>
+
+<section class="section" id="recarregar">
+<h2>Solicitar recarga — 850 MT</h2>
+<p class="lead">Depois de criar e verificar a sua conta, fale connosco pelo WhatsApp para solicitar a recarga de <b>850 MT</b>. A nossa equipa irá orientar o método de pagamento disponível.</p>
+<div class="recharge"><div class="price">850 MT</div>
+<p style="color:var(--muted);line-height:1.6">Não precisa introduzir dados bancários nesta página. Clique no botão, envie a mensagem pré-preenchida e aguarde as instruções da nossa equipa.</p>
+<div class="methods"><div class="method">📱 M-Pesa<small>Pagamento via atendimento</small></div><div class="method">📱 eMola<small>Pagamento via atendimento</small></div><div class="method">📱 mKesh<small>Pagamento via atendimento</small></div><div class="method">🏦 Banco<small>Pagamento via atendimento</small></div></div>
+<button class="paybtn" id="pay" onclick="startPayment()">💬 Solicitar pelo WhatsApp — 850 MT</button>
+<div class="notice" style="margin-top:15px">🔒 Nunca envie senha, OTP, seed phrase ou chave privada pelo WhatsApp.</div>
+</div></section>
+
+
+
+<section class="section"><h2>Perguntas frequentes</h2><div class="faq">
+<details><summary>Como recebo o bónus de $5?</summary><p>Para esta campanha, o utilizador deve entrar pelo nosso link de convite e usar o código <b>jt6mg</b> durante o registo. O bónus de $5 está sujeito às regras, elegibilidade e condições da campanha da RedotPay; esta página não garante o pagamento do bónus.</p></details>
+<details><summary>O bónus de $5 e os 20% de desconto acumulam?</summary><p>São benefícios diferentes: o bónus está associado à campanha de novos utilizadores e o desconto é aplicado através do código promocional do cartão. A disponibilidade e eventual acumulação devem ser confirmadas no checkout/app no momento da compra.</p></details>
+<details><summary>Posso colocar o código de convite depois?</summary><p>Não. A RedotPay informa que o código de indicação deve ser inserido durante o registo e não pode ser acrescentado a uma conta já criada.</p></details>
+<details><summary>O código de desconto é o mesmo que o código de convite?</summary><p>Não. O convite é <b>jt6mg</b>. Os códigos de cartão são <b>PAYGOV20</b> para virtual e <b>PAYGOP20</b> para físico, conforme a campanha apresentada.</p></details>
+<details><summary>Os 850 MT são uma taxa da RedotPay?</summary><p>Não apresente este valor como uma taxa oficial da RedotPay. Nesta página, 850 MT é o valor definido para a operação de recarga/serviço. O preço e as condições devem ser confirmados antes do pagamento.</p></details>
+<details><summary>O pagamento é seguro?</summary><p>O botão deve encaminhar para o checkout da ZumboPay. Não coloque chaves secretas da API no código do navegador. A integração real deve ser feita no backend.</p></details>
+</div></section>
+</main>
+
+<footer class="footer"><div class="wrap">© 2026 RedotPay Guide • Página independente de divulgação e assistência.</div></footer>
+
+<script>
+function copyText(t){navigator.clipboard?.writeText(t);showToast('Copiado: '+t)}
+function preview(input){const img=input.parentElement.querySelector('.preview');if(input.files?.[0]){img.src=URL.createObjectURL(input.files[0]);img.style.display='block';showToast('Imagem adicionada a este passo.');}}
+function showToast(msg){const t=document.getElementById('toast');t.textContent=msg;t.classList.add('show');clearTimeout(window.toastTimer);window.toastTimer=setTimeout(()=>t.classList.remove('show'),3500)}
+function toggleNotifications(){document.getElementById('notifPanel').classList.toggle('open')}
+function markNotificationsRead(){document.getElementById('notifCount').textContent='0';showToast('Notificações marcadas como lidas.');}
+document.addEventListener('click',e=>{const w=document.querySelector('.notif-wrap');if(w&&!w.contains(e.target))document.getElementById('notifPanel').classList.remove('open')});
+const verified=document.getElementById('verified'),pay=document.getElementById('pay');
+verified.addEventListener('change',()=>pay.disabled=!verified.checked);
+function startPayment(){
+  const phone = '258SEU_NUMERO_WHATSAPP';
+  const msg = 'Olá! Quero adquirir o cartão RedotPay. Já vi o guia e quero continuar.\\n\\nNome: \\nCódigo de convite: jt6mg\\nTipo de cartão: \\n';
+  const url = 'https://wa.me/' + phone + '?text=' + encodeURIComponent(msg);
+  window.open(url, '_blank');
+}
+</script>
+<div class="toast" id="toast"></div></body>
+</html>
