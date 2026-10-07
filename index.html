@@ -23,6 +23,33 @@ nav{position:sticky;top:0;z-index:50;background:#08090edb;backdrop-filter:blur(1
 .form-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:18px}.form-grid label{color:#dce1e8;font-size:12px;font-weight:850}.form-grid input,.form-grid select{display:block;width:100%;margin-top:7px;padding:14px;border-radius:13px;border:1px solid var(--line);background:#090c12;color:#fff;font:inherit}.form-grid .full{grid-column:1/-1}.confirm{display:flex;gap:8px;align-items:center;color:#9da7b5;font-size:12px;margin:15px 0}.confirm input{accent-color:var(--pink)}.mobile-cta{display:none}@media(max-width:600px){.form-grid{grid-template-columns:1fr}.form-grid .full{grid-column:auto}}
 @media(max-width:900px){.hero-grid{grid-template-columns:1fr}.card-stage{min-height:340px}.how{grid-template-columns:repeat(2,1fr)}.navlinks{display:none}.stats{grid-template-columns:repeat(2,1fr)}}
 @media(max-width:600px){.wrap{width:min(var(--max),calc(100% - 22px))}.topbar{font-size:10px}.navin{height:62px}.brand small{display:none}.navcta{padding:10px 12px}.hero{padding:43px 0 20px}.hero h1{font-size:43px;letter-spacing:-2px}.hero p{font-size:16px}.offer-banner strong{font-size:23px}.card{transform:rotate(2deg);padding:22px}.card-number{margin-top:31px;font-size:15px}.card-stage{min-height:290px}.section{padding:48px 0}.section h2{font-size:30px}.section-head{display:block}.step{grid-template-columns:45px 1fr;gap:13px;padding:18px;border-radius:19px}.num{width:43px;height:43px;border-radius:13px}.step h3{font-size:19px}.how{grid-template-columns:1fr 1fr}.promos,.security{grid-template-columns:1fr}.methods{grid-template-columns:1fr 1fr}.price{font-size:42px}.float-wa{bottom:76px;right:14px}.mobile-cta{display:flex;position:fixed;bottom:0;left:0;right:0;z-index:35;padding:9px 11px calc(9px + env(safe-area-inset-bottom));background:#080a0eeF;border-top:1px solid var(--line);gap:8px}.mobile-cta a{flex:1;padding:12px;border-radius:12px;text-align:center;font-size:12px;font-weight:900}.mobile-cta .m1{background:var(--pink)}.mobile-cta .m2{background:#173522;color:#8ff0af;border:1px solid #285b3a}}
+
+/* Visual effects */
+body:after{content:"";position:fixed;inset:-20%;z-index:-2;pointer-events:none;background:radial-gradient(circle at 15% 20%,#ff2d7818 0,transparent 24%),radial-gradient(circle at 85% 30%,#7c3cff12 0,transparent 22%),radial-gradient(circle at 50% 90%,#ff2d780d 0,transparent 26%);animation:aurora 14s ease-in-out infinite alternate}
+@keyframes aurora{0%{transform:translate3d(-2%,0,0) scale(1)}50%{transform:translate3d(2%,-1%,0) scale(1.04)}100%{transform:translate3d(-1%,2%,0) scale(1.02)}}
+body:before{animation:gridMove 18s linear infinite}
+@keyframes gridMove{from{background-position:0 0,0 0}to{background-position:48px 48px,48px 48px}}
+.eyebrow{animation:pulseGlow 2.8s ease-in-out infinite}
+@keyframes pulseGlow{0%,100%{box-shadow:0 0 0 #ff2d7800}50%{box-shadow:0 0 28px #ff2d781c}}
+.btn,.navcta,.paybtn,.copy{position:relative;overflow:hidden}
+.btn:after,.navcta:after,.paybtn:after,.copy:after{content:"";position:absolute;inset:-80% -30%;background:linear-gradient(105deg,transparent 42%,#ffffff38 50%,transparent 58%);transform:translateX(-70%) rotate(8deg);transition:transform .7s ease;pointer-events:none}
+.btn:hover:after,.navcta:hover:after,.paybtn:hover:after,.copy:hover:after{transform:translateX(70%) rotate(8deg)}
+.btn,.navcta,.paybtn,.copy,.how-card,.stat,.promo,.security-card,.step{transition:transform .25s ease,box-shadow .25s ease,border-color .25s ease}
+.btn:hover,.navcta:hover{transform:translateY(-2px)}
+.copy:hover{transform:translateY(-1px);box-shadow:0 8px 24px #0005}
+.stat:hover,.how-card:hover,.promo:hover,.security-card:hover{transform:translateY(-4px);box-shadow:0 18px 45px #0005;border-color:#ff2d7840}
+.card-stage{perspective:1000px}
+.card{animation:cardFloat 5s ease-in-out infinite;transform-style:preserve-3d}
+@keyframes cardFloat{0%,100%{transform:rotate(3deg) translateY(0) rotateX(0deg)}50%{transform:rotate(1deg) translateY(-13px) rotateX(2deg)}}
+.glow{animation:glowPulse 4s ease-in-out infinite}
+@keyframes glowPulse{0%,100%{opacity:.55;transform:scale(.9)}50%{opacity:1;transform:scale(1.12)}}
+.reveal{opacity:0;transform:translateY(22px);transition:opacity .7s ease,transform .7s ease}
+.reveal.visible{opacity:1;transform:none}
+.particle{position:fixed;width:4px;height:4px;border-radius:50%;background:#ff5b9a;box-shadow:0 0 14px #ff2d78;pointer-events:none;z-index:-1;opacity:0;animation:particleDrift var(--dur) linear infinite;animation-delay:var(--delay);left:var(--x);top:105vh}
+@keyframes particleDrift{0%{transform:translate3d(0,0,0) scale(.4);opacity:0}12%{opacity:.7}85%{opacity:.35}100%{transform:translate3d(var(--dx),-120vh,0) scale(1);opacity:0}}
+@media(max-width:600px){.card{animation-duration:6s}.particle{width:3px;height:3px}.btn:after,.navcta:after,.paybtn:after,.copy:after{display:none}}
+@media(prefers-reduced-motion:reduce){*,*:before,*:after{animation:none!important;transition:none!important}.reveal{opacity:1;transform:none}}
+
 </style>
 </head>
 <body>
@@ -120,5 +147,13 @@ function addAIMessage(text,type){const box=document.getElementById('aiMessages')
 function quickAI(text){document.getElementById('aiInput').value=text;sendAIMessage(text)}
 async function sendAI(e){e.preventDefault();const input=document.getElementById('aiInput');const text=input.value.trim();if(!text)return;input.value='';await sendAIMessage(text)}
 async function sendAIMessage(text){const send=document.getElementById('aiSend'),typing=document.getElementById('aiTyping');addAIMessage(text,'user');aiHistory.push({role:'user',content:text});send.disabled=true;typing.hidden=false;try{const r=await fetch('/api/chat',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({messages:aiHistory.slice(-10)})});const data=await r.json();if(!r.ok)throw new Error(data.error||'Não foi possível responder.');const answer=data.reply||'Não consegui responder neste momento.';addAIMessage(answer,'bot');aiHistory.push({role:'assistant',content:answer})}catch(err){addAIMessage('Desculpe, não consegui ligar à assistente agora. Pode tentar novamente ou falar connosco pelo WhatsApp.','bot')}finally{send.disabled=false;typing.hidden=true;document.getElementById('aiInput').focus()}}
+
+/* Motion effects */
+document.querySelectorAll('.section,.stats,.hero-grid,.bonus,.recharge,.footer').forEach(el=>el.classList.add('reveal'));
+const revealObserver=new IntersectionObserver(entries=>entries.forEach(entry=>{if(entry.isIntersecting){entry.target.classList.add('visible');revealObserver.unobserve(entry.target)}}),{threshold:.08});
+document.querySelectorAll('.reveal').forEach(el=>revealObserver.observe(el));
+const particleCount=window.matchMedia('(max-width:600px)').matches?10:18;
+for(let i=0;i<particleCount;i++){const p=document.createElement('span');p.className='particle';p.style.setProperty('--x',Math.random()*100+'vw');p.style.setProperty('--dx',(Math.random()*160-80)+'px');p.style.setProperty('--dur',(12+Math.random()*14)+'s');p.style.setProperty('--delay',(-Math.random()*18)+'s');document.body.appendChild(p)}
+
 </script>
 </body></html>
