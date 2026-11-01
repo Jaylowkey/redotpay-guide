@@ -34,7 +34,7 @@ Nunca colocar \`SUPABASE_SERVICE_ROLE_KEY\` no HTML, no navegador, no GitHub ou 
 
 O link de convite mantido nesta versão é \`https://url.hk/i/en/jt6mg\`, conforme o site anterior.
 
-Os códigos promocionais exibidos são exatamente os fornecidos pelo responsável: \`PAYGOP20\` e \`PAUGOV20\`. A validade, o desconto, a elegibilidade e o produto aplicável ainda precisam ser confirmados no checkout oficial. Não afirmar que os dois são cumulativos.
+Os códigos promocionais corretos são \`PAYGOV20\` para cartão virtual e \`PAYGOP20\` para cartão físico. Segundo a informação da parceria, os códigos são válidos por um ano. Essa validade não significa um desconto de 20% durante um ano. A elegibilidade e as condições devem ser confirmadas na aplicação oficial.
 
 ## 5. Eventos medidos
 
