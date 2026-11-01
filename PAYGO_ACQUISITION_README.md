@@ -30,7 +30,7 @@ https://redotpay-guide.vercel.app/?utm_source=tiktok&utm_medium=organic&utm_camp
 Referral code: jt6mg
 Referral URL: https://url.hk/i/en/jt6mg
 Official PAYGO–RedotPay affiliate offer: PAYGOV20 for virtual cards; PAYGOP20 for physical cards.
-Both codes provide 20% discount for one year, according to the RedotPay affiliate contact. Renewal may be requested from the RedotPay team. In the app: Card → Apply Cards → enter the matching code. Confirm the discount appears before completing payment.
+The promotional codes are valid for one year, according to the RedotPay affiliate contact: PAYGOV20 for virtual cards and PAYGOP20 for physical cards. This validity does not mean a 20% discount for one year. In the app: Card → Apply Cards → enter the matching code and review the official terms shown.
 WhatsApp contact retained from existing site: +258 871 002 255.
 
 ## Deployment
