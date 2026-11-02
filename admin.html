@@ -153,6 +153,6 @@ $("exportCommissions").onclick=()=>downloadCsv("paygo-comissoes-afiliados.csv",m
 const oldLoad=load;
 load=async function(){await oldLoad();try{await loadOperations()}catch(err){console.error(err);$("auditRows").innerHTML='<tr><td colspan="5" class="empty">Módulos operacionais: '+esc(err.message)+'</td></tr>'}};
 
-sb.auth.onAuthStateChange(()=>{check()});check();
+sb.auth.onAuthStateChange((event)=>{if(event==="SIGNED_IN"||event==="TOKEN_REFRESHED"||event==="INITIAL_SESSION"){setTimeout(()=>{check().catch(err=>{console.error("PAYGO session check:",err);$("msg").textContent="Erro ao abrir o painel: "+err.message})},0)}});check().catch(err=>{console.error("PAYGO initial check:",err);$("msg").textContent="Erro ao verificar a sessão: "+err.message});
 </script>
 </body></html>
