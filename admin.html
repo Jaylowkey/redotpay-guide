@@ -105,7 +105,7 @@ let mfaFactorId=null,mfaChallengeId=null;async function refreshMfa(){const {data
 
 $("mfaEnroll").onclick=async()=>{try{$("mfaMessage").textContent="A preparar configuração...";const {data,error}=await sb.auth.mfa.enroll({factorType:"totp",friendlyName:"PAYGO Control Center"});if(error)throw error;mfaFactorId=data.id;$("mfaQrImage").innerHTML=data.totp.qr_code;$("mfaSecret").textContent=data.totp.secret;$("mfaQr").classList.remove("hidden");$("mfaMessage").textContent="Digitaliza o QR code e introduz o código gerado."}catch(err){$("mfaMessage").textContent="Erro ao iniciar MFA: "+err.message}};$("mfaVerify").onclick=async()=>{try{const code=$("mfaCode").value.trim();if(!mfaFactorId||!/^\\d{6}$/.test(code))throw new Error("Introduz o código de 6 dígitos da aplicação.");const {data:challenge,error:ce}=await sb.auth.mfa.challenge({factorId:mfaFactorId});if(ce)throw ce;const {error}=await sb.auth.mfa.verify({factorId:mfaFactorId,challengeId:challenge.id,code});if(error)throw error;$("mfaCode").value="";$("mfaMessage").textContent="MFA ativado e verificado nesta conta.";await refreshMfa()}catch(err){$("mfaMessage").textContent="Não foi possível verificar: "+err.message}};
 $("logout").onclick=async()=>{await sb.auth.signOut();await check()};
-$("refresh").onclick=load;
+$("refresh").onclick=null;
 ["period","campaignFilter","sourceFilter","eventSearch"].forEach(id=>$(id).addEventListener(id==="eventSearch"?"input":"change",render));
 $("clearFilters").onclick=()=>{$("period").value="30";$("campaignFilter").value="";$("sourceFilter").value="";$("eventSearch").value="";render()};
 $("exportEvents").onclick=()=>downloadCsv("paygo-eventos.csv",selectedRows(),["created_at","event_name","source","medium","campaign","promo_code","country_code","landing_path","referrer_host","visitor_id"]);
@@ -153,6 +153,6 @@ const oldLoad=load;
 load=async function(){await oldLoad();try{await loadOperations()}catch(err){console.error(err);$("auditRows").innerHTML='<tr><td colspan="5" class="empty">Módulos operacionais: '+esc(err.message)+'</td></tr>'}};
 $("refresh").addEventListener("click",async e=>{e.preventDefault();const b=$("refresh"),t=$("trend");b.disabled=true;b.textContent="A atualizar...";t.innerHTML='<div class="empty">A consultar os dados no Supabase...</div>';try{await load()}catch(err){console.error("PAYGO refresh:",err);t.innerHTML='<div class="empty">Falha ao atualizar: '+esc(err?.message||String(err))+'</div>'}finally{b.disabled=false;b.textContent="↻ Atualizar dados"}});
 
-sb.auth.onAuthStateChange((event)=>{if(event==="SIGNED_IN"||event==="TOKEN_REFRESHED"||event==="INITIAL_SESSION"){setTimeout(()=>{check().catch(err=>{console.error("PAYGO session check:",err);$("msg").textContent="Erro ao abrir o painel: "+err.message})},0)}});check().catch(err=>{console.error("PAYGO initial check:",err);$("msg").textContent="Erro ao verificar a sessão: "+err.message});
+sb.auth.onAuthStateChange((event)=>{if(event==="SIGNED_IN"){setTimeout(()=>{check().catch(err=>{console.error("PAYGO session check:",err);$("msg").textContent="Erro ao abrir o painel: "+err.message})},0)}});check().catch(err=>{console.error("PAYGO initial check:",err);$("msg").textContent="Erro ao verificar a sessão: "+err.message});
 </script>
 </body></html>
